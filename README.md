@@ -1,7 +1,7 @@
-# Awesome Project Build with TypeORM
+TypeORM을 써보았읍니다.
 
-Steps to run this project:
+`node ./build/index.js`로 실행하실 수 있습니다.
 
-1. Run `npm i` command
-2. Setup database settings inside `data-source.ts` file
-3. Run `npm start` command
+![image](erd.png)
+
+(1대1, 1대다, 다대다 관계)
