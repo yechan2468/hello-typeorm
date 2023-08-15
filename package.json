@@ -1,6 +1,7 @@
 {
   "name": "kuco",
   "version": "0.0.1",
+  "type": "module",
   "description": "Awesome project developed with TypeORM.",
   "devDependencies": {
     "ts-node": "10.7.0",
@@ -13,6 +14,7 @@
     "sqlite3": "^5.0.2"
   },
   "scripts": {
+    "build": "tsc --build",
     "start": "ts-node src/index.ts",
     "typeorm": "typeorm-ts-node-commonjs"
   }

@@ -1,41 +1,34 @@
-import { AppDataSource } from "./data-source";
-import { Member } from "./entity/User";
+import { AppDataSource } from "./data-source.js";
+import { Member } from "./entity/User.js";
 
-// AppDataSource.initialize()
-//   .then(async () => {
-//     console.log("Inserting a new user into the database...");
-//     const user = new Member();
-//     // user.firstName = "Timber";
-//     // user.lastName = "Saw";
-//     // user.age = 25;
-//     await AppDataSource.manager.save(user);
-//     // console.log("Saved a new user with id: " + user.id);
+await AppDataSource.initialize();
 
-//     console.log("Loading users from the database...");
-//     const users = await AppDataSource.manager.find(Member);
-//     console.log("Loaded users: ", users);
+const member1 = new Member();
+member1.member_id = 1;
+member1.member_name = "이예찬";
+member1.department = "소프트웨어융합학과";
+member1.gisu = 20;
+member1.student_id = "2019102117";
+member1.phone_number = "01012334456";
+member1.graduated = false;
+await member1.save();
 
-//     console.log(
-//       "Here you can setup and run express / fastify / any other framework."
-//     );
-//   })
-//   .catch((error) => console.log(error));
-
-const member = new Member();
-member.member_id = 1;
-member.member_name = "이예찬";
-member.department = "소프트웨어융합학과";
-member.gisu = 20;
-member.student_id = "2019102117";
-member.phone_number = "01012334456";
-member.graduated = false;
-
-await member.save();
+const member2 = new Member();
+member2.member_id = 2;
+member2.member_name = "김부캠";
+member2.department = "멤버십학과";
+member2.gisu = 19;
+member2.student_id = "2020115325";
+member2.phone_number = "01013552488";
+member2.graduated = false;
+await member2.save();
 
 const allUsers = await Member.find();
+console.log("all users: ", allUsers);
 const firstUser = await Member.findOneBy({
   member_id: 1,
 });
+console.log("first user: ", firstUser);
 const timber = await Member.findOneBy({
   member_name: "이예찬",
   student_id: "2019102117",
