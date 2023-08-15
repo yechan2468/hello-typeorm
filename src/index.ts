@@ -110,9 +110,9 @@ async function get_all_movies() {
   return await Movie.find();
 }
 
-// await add_oppenheimer();
-// await add_interstellar();
-// await add_avengers_endgame();
+await add_oppenheimer();
+await add_interstellar();
+await add_avengers_endgame();
 
 console.log("\n\n\nall movies: ", await get_all_movies());
 
