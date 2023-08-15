@@ -29,6 +29,7 @@ member.gisu = 20;
 member.student_id = "2019102117";
 member.phone_number = "01012334456";
 member.graduated = false;
+
 await member.save();
 
 const allUsers = await Member.find();
